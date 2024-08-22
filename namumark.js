@@ -6,6 +6,7 @@ function renderTable(data) {
 
 function render(raw) {
     const rendered = raw
+        .replace(/(.*?)/g, '<span>$1</span>') //문법없음
         // {{{}}}문법
         .replace(/{{{\s(.*?)}}}/g, '<span>$1</span>') //none
         .replace(/{{{\+5\s(.*?)}}}/g, '<span style="font-size:200%">$1</span>') //+5
@@ -18,8 +19,10 @@ function render(raw) {
         .replace(/{{{\-3\s(.*?)}}}/g, '<span style="font-size:70%">$1</span>') //-3
         .replace(/{{{\-4\s(.*?)}}}/g, '<span style="font-size:60%">$1</span>') //-4
         .replace(/{{{\-5\s(.*?)}}}/g, '<span style="font-size:50%">$1</span>') //-5
-        // html
-        .replace(/{{{\#html!\s(.*?)}}}/g, '$1')
+        //html 
+        .replace(/{{{\#!html\s(.*?)}}}/g, '$1')
+        //wiki
+        .replace(/{{{\#!wiki\s(.*?)}}}/g, '$1')
     return rendered;
 };
 
