@@ -1,0 +1,14 @@
+{
+    "name": "namumark",
+    "version": "0.0.3",
+    "description": "namumark lib",
+    "main": "namumark.js",
+    "scripts": {
+      "test": "node test.js"
+    },
+    "keywords": [
+      "namumark"
+    ],
+    "author": "adidq",
+    "license": "MIT"
+  }
